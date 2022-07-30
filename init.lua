@@ -1,0 +1,13 @@
+require('settings')
+require('colorschemes')
+require('plugins')
+require('nvim-tree-config')
+require('lualine-config')
+require('barbar-config')
+require('mappings')
+require('lsp-config.language-servers')
+require('lsp-config.nvim-cmp')
+require('lsp-config.null-ls')
+require('treesitter-config');
+require('telescope-config')
+require('comment-config')

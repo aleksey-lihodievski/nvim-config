@@ -16,9 +16,14 @@ return require("packer").startup(function(use)
 	use("nvim-lua/plenary.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("MunifTanjim/prettier.nvim")
+
+	use("TimUntersberger/neogit")
+	use("sindrets/diffview.nvim")
+
 	-- use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 	-- Themes
+	-- use 'rebelot/kanagawa.nvim'
 	-- use 'sainnhe/edge'
 	-- use 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' }
 	-- use 'dracula/vim'

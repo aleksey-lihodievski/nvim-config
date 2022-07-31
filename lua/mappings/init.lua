@@ -28,30 +28,30 @@ map("n", ",<Space>", ":nohlsearch<CR>", opts)
 --Tabs
 map("n", "<leader>tn", ":tabnew<CR>", opts)
 -- Move to previous/next
-map('n', 'gp', '<Cmd>BufferPrevious<CR>', opts)
-map('n', 'gn', '<Cmd>BufferNext<CR>', opts)
+map("n", "gp", "<Cmd>BufferPrevious<CR>", opts)
+map("n", "gn", "<Cmd>BufferNext<CR>", opts)
 -- Re-order to previous/next
-map('n', 'm<', '<Cmd>BufferMovePrevious<CR>', opts)
-map('n', 'm>', '<Cmd>BufferMoveNext<CR>', opts)
+map("n", "m<", "<Cmd>BufferMovePrevious<CR>", opts)
+map("n", "m>", "<Cmd>BufferMoveNext<CR>", opts)
 -- Goto buffer in position...
-map('n', '<leader>1', '<Cmd>BufferGoto 1<CR>', opts)
-map('n', '<leader>2', '<Cmd>BufferGoto 2<CR>', opts)
-map('n', '<leader>3', '<Cmd>BufferGoto 3<CR>', opts)
-map('n', '<leader>4', '<Cmd>BufferGoto 4<CR>', opts)
-map('n', '<leader>5', '<Cmd>BufferGoto 5<CR>', opts)
-map('n', '<leader>6', '<Cmd>BufferGoto 6<CR>', opts)
-map('n', '<leader>7', '<Cmd>BufferGoto 7<CR>', opts)
-map('n', '<leader>8', '<Cmd>BufferGoto 8<CR>', opts)
-map('n', '<leader>9', '<Cmd>BufferGoto 9<CR>', opts)
-map('n', '<leader>0', '<Cmd>BufferLast<CR>', opts)
+map("n", "<leader>1", "<Cmd>BufferGoto 1<CR>", opts)
+map("n", "<leader>2", "<Cmd>BufferGoto 2<CR>", opts)
+map("n", "<leader>3", "<Cmd>BufferGoto 3<CR>", opts)
+map("n", "<leader>4", "<Cmd>BufferGoto 4<CR>", opts)
+map("n", "<leader>5", "<Cmd>BufferGoto 5<CR>", opts)
+map("n", "<leader>6", "<Cmd>BufferGoto 6<CR>", opts)
+map("n", "<leader>7", "<Cmd>BufferGoto 7<CR>", opts)
+map("n", "<leader>8", "<Cmd>BufferGoto 8<CR>", opts)
+map("n", "<leader>9", "<Cmd>BufferGoto 9<CR>", opts)
+map("n", "<leader>0", "<Cmd>BufferLast<CR>", opts)
 -- Close buffer
-map('n', 'gw', '<Cmd>BufferClose<CR>', opts)
+map("n", "gw", "<Cmd>BufferClose<CR>", opts)
 
 --Telescope
-map('n', '<leader>ff', '<Cmd>Telescope find_files<CR>', opts)
-map('n', '<leader>fg', '<Cmd>Telescope live_grep<CR>', opts)
-map('n', '<leader>fb', '<Cmd>Telescope buffers<CR>', opts)
-map('n', '<leader>fh', '<Cmd>Telescope help_tags<CR>', opts)
+map("n", "<leader>ff", "<Cmd>Telescope find_files<CR>", opts)
+map("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", opts)
+map("n", "<leader>fb", "<Cmd>Telescope buffers<CR>", opts)
+map("n", "<leader>fh", "<Cmd>Telescope help_tags<CR>", opts)
 
 -- Default for comments
 -- gcc comment/uncomment current line, this does not take a count, if you want a count use the gc{count}{motion}
@@ -62,3 +62,13 @@ map('n', '<leader>fh', '<Cmd>Telescope help_tags<CR>', opts)
 -- dic delete comment block
 -- gcic uncomment commented block
 
+map("n", "<leader>gg", "<Cmd>:Neogit<CR>", opts)
+map("n", "<leader>do", "<Cmd>:DiffviewOpen<CR>", opts)
+map("n", "<leader>dc", "<Cmd>:DiffviewClose<CR>", opts)
+map("n", "<leader>gl", "<Cmd>:Neogit log<CR>", opts)
+map("n", "<leader>gp", "<Cmd>:Neogit push<CR>", opts)
+-- "nnoremap <leader>gg :Neogit<cr>
+-- nnoremap <leader>do :DiffviewOpen<cr>
+-- nnoremap <leader>dc :DiffviewClose<cr>
+-- "nnoremap <leader>gl :Neogit log<cr>
+-- "nnoremap <leader>gp :Neogit push<cr>

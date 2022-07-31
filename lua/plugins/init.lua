@@ -25,7 +25,14 @@ return require("packer").startup(function(use)
 	use("MunifTanjim/prettier.nvim")
 
 	use("TimUntersberger/neogit")
-	use("sindrets/diffview.nvim")
+	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
+	use({
+		"lewis6991/gitsigns.nvim",
+		-- tag = 'release' -- To use the latest release
+	})
+
+	use({ "neoclide/coc.nvim", branch = "release" })
+	use("fatih/vim-go")
 
 	-- use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 

@@ -94,10 +94,20 @@ _G.packer_plugins = {
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["coc.nvim"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/coc.nvim",
+    url = "https://github.com/neoclide/coc.nvim"
+  },
   ["diffview.nvim"] = {
     loaded = true,
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["kanagawa.nvim"] = {
     loaded = true,
@@ -179,6 +189,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["vim-go"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/vim-go",
+    url = "https://github.com/fatih/vim-go"
   }
 }
 

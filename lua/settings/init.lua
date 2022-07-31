@@ -42,3 +42,4 @@ set.guitablabel = "%t"
 
 --vim.notify = require("notify")
 
+

@@ -1,1 +1,3 @@
-vim.cmd "colorscheme OceanicNext"
+-- Faves themes
+-- vim.cmd "colorscheme OceanicNext"
+vim.cmd("colorscheme kanagawa")

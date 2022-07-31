@@ -2,6 +2,13 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "v2.*",
+		config = function()
+			require("toggleterm").setup()
+		end,
+	})
 	use("nvim-lualine/lualine.nvim")
 	use("romgrk/barbar.nvim")
 	use("jiangmiao/auto-pairs")
@@ -23,7 +30,7 @@ return require("packer").startup(function(use)
 	-- use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 	-- Themes
-	-- use 'rebelot/kanagawa.nvim'
+	use("rebelot/kanagawa.nvim")
 	-- use 'sainnhe/edge'
 	-- use 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' }
 	-- use 'dracula/vim'

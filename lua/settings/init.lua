@@ -34,7 +34,7 @@ set.hidden = true
 set.mouse = "v" --middle-click paste with
 set.mouse = "a"
 
---set.autochdir = true
+-- set.autochdir = true
 set.clipboard = "unnamedplus"
 
 vim.cmd(":set noswapfile")

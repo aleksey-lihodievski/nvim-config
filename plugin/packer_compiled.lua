@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/barbar.nvim",
     url = "https://github.com/romgrk/barbar.nvim"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -194,6 +199,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/vim-go",
     url = "https://github.com/fatih/vim-go"
+  },
+  ["vim-one"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/vim-one",
+    url = "https://github.com/rakr/vim-one"
   }
 }
 

@@ -14,8 +14,13 @@ return require("packer").startup(function(use)
 	use("jiangmiao/auto-pairs")
 	use("terrortylor/nvim-comment")
 
+	-- use("williamboman/nvim-lsp-installer")
+	-- use({ "williamboman/mason.nvim" })
 	use("neovim/nvim-lspconfig")
+	-- use("williamboman/mason-lspconfig.nvim")
+	-- use("kabouzeid/nvim-lspinstall")
 	use("hrsh7th/nvim-cmp") -- Autocompletion plugin
+	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
 	use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
 	use("L3MON4D3/LuaSnip") -- Snippets plugin
@@ -40,12 +45,13 @@ return require("packer").startup(function(use)
 	use("rebelot/kanagawa.nvim")
 	-- use 'sainnhe/edge'
 	-- use 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' }
-	-- use 'dracula/vim'
-	-- use 'morhetz/gruvbox'
+	-- use("dracula/vim")
+	-- use("morhetz/gruvbox")
 	-- use 'folke/tokyonight.nvim', { 'branch': 'main' }
 	use("mhartington/oceanic-next")
-	-- use 'rakr/vim-one'
-	-- use 'sonph/onehalf', { 'rtp': 'vim' }
+	-- use("altercation/vim-colors-solarized")
+	use("rakr/vim-one")
+	-- use({ "sonph/onehalf", rtp = "vim" }) buggy
 
 	-- Plug 'prettier/vim-prettier', {
 	-- \ 'do': 'npm install --frozen-lockfile --production',

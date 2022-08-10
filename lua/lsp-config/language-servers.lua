@@ -1,5 +1,5 @@
 -- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions local opts = { noremap = true, silent = true }
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
@@ -17,7 +17,7 @@ end
 local on_attach = function(client, bufnr)
 	-- disableFormatting(client, bufnr)
 	-- Enable completion triggered by <c-x><c-o>
-	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+	-- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
 	if client.resolved_capabilities.document_formatting then
 		vim.cmd("nnoremap <silent><buffer> <Leader>fd :lua vim.lsp.buf.formatting()<CR>")

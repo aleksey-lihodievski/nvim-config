@@ -4,7 +4,8 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " " -- leader key
 
 --> nvim-tree mappings <--
-map("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
+map("n", "<C-o>", ":NvimTreeToggle<CR>", opts)
+map("n", "<leader>tt", ":TransparentToggle<CR>", opts)
 --> telescope mappings <--
 --map("n", "<leader>ff", ":Telescope find_files<cr>", opts)
 --map("n", "<leader>fg", ":Telescope live_grep<cr>", opts)
@@ -24,6 +25,9 @@ map("n", "<leader>l", "<C-W>l<C-W><CR>", opts)
 
 --Reset search
 map("n", ",<Space>", ":nohlsearch<CR>", opts)
+
+--Esc
+map("i", "jk", "<esc>", opts)
 
 --Tabs
 map("n", "<leader>tn", ":tabnew<CR>", opts)

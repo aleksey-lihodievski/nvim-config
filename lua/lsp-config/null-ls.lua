@@ -1,7 +1,7 @@
 local null_ls = require("null-ls")
 --
 local callback = function()
-	vim.lsp.buf.formatting_sync()
+	vim.lsp.buf.format({ bufnr = bufnr })
 end
 
 local formatting = null_ls.builtins.formatting
@@ -13,6 +13,8 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local sources = {
 	formatting.prettier,
 	formatting.stylua,
+	-- formatting.pylint,
+	-- formatting.solhint,
 	-- formatting.eslint, starts working after first fail
 	-- diagnostics.eslint,
 	-- diagnostics.stylelint_lsp,

@@ -17,12 +17,15 @@ require("diffview").setup({
 	},
 	file_history_panel = {
 		log_options = { -- See ':h diffview-config-log_options'
-			single_file = {
+    git = {
+      			single_file = {
 				diff_merges = "combined",
 			},
 			multi_file = {
 				diff_merges = "first-parent",
 			},
+
+    }
 		},
 		win_config = { -- See ':h diffview-config-win_config'
 			position = "bottom",

@@ -8,7 +8,7 @@ vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 
 local disableFormatting = function(client, bufnr)
 	--local params = util.make_formatting_params({})
-	client.resolved_capabilities.document_formatting = false
+	client.server_capabilities.documentFormattingProvider = false
 	--client.request('textDocument/formatting', params, nil, bufnr)
 end
 
@@ -19,13 +19,13 @@ local on_attach = function(client, bufnr)
 	-- Enable completion triggered by <c-x><c-o>
 	-- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-	if client.resolved_capabilities.document_formatting then
-		vim.cmd("nnoremap <silent><buffer> <Leader>fd :lua vim.lsp.buf.formatting()<CR>")
+	if client.server_capabilities.documentFormattingProvider then
+		vim.cmd("nnoremap <silent><buffer> <Leader>fd :lua vim.lsp.buf.format()<CR>")
 		-- format on save
-		vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()")
+		vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.format()")
 	end
 
-	if client.resolved_capabilities.document_range_formatting then
+	if client.server_capabilities.documentFormattingProvider then
 		vim.cmd("xnoremap <silent><buffer> <Leader>df :lua vim.lsp.buf.range_formatting({})<CR>")
 	end
 
@@ -51,7 +51,7 @@ end
 
 --Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 local util = require("vim.lsp.util")
 
@@ -68,6 +68,13 @@ require("lspconfig")["tsserver"].setup({
 	capabilities = capabilities,
 	flags = lsp_flags,
 })
+
+require("lspconfig").angularls.setup({})
+
+require("lspconfig").graphql.setup({})
+
+require("lspconfig").prismals.setup({})
+
 -- require('lspconfig')['html'].setup{
 --     on_attach = function(client, bufnr)
 --       on_attach(client, bufnr)
@@ -97,6 +104,14 @@ require("lspconfig").eslint.setup({
 		disableFormatting(client, bufnr)
 	end,
 })
+
+require("lspconfig").gopls.setup({})
+
+-- require("lspconfig").solc.setup({})
+-- require("lspconfig").solang.setup({})
+-- require("lspconfig").solidity_ls.setup({})
+
+require("lspconfig").pyright.setup({})
 
 -- require("lspconfig")["stylelint_lsp"].setup({
 -- 	on_attach = function(client, bufnr)

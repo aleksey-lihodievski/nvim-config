@@ -1,7 +1,11 @@
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
-	use("kyazdani42/nvim-web-devicons")
-	use("kyazdani42/nvim-tree.lua")
+	-- use("kyazdani42/nvim-web-devicons")
+	-- use("kyazdani42/nvim-tree.lua")
+
+	use("nvim-tree/nvim-web-devicons")
+	use({ "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons" })
+
 	use({
 		"akinsho/toggleterm.nvim",
 		tag = "v2.*",
@@ -33,25 +37,39 @@ return require("packer").startup(function(use)
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 	use({
 		"lewis6991/gitsigns.nvim",
-		-- tag = 'release' -- To use the latest release
+		tag = "release", -- To use the latest release
 	})
 
 	use({ "neoclide/coc.nvim", branch = "release" })
 	use("fatih/vim-go")
+	use("tomlion/vim-solidity")
 
 	-- use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 	-- Themes
 	use("rebelot/kanagawa.nvim")
-	-- use 'sainnhe/edge'
-	-- use 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' }
-	-- use("dracula/vim")
+	-- use("sainnhe/edge")
+	use("EdenEast/nightfox.nvim")
+	use("dracula/vim")
 	-- use("morhetz/gruvbox")
-	-- use 'folke/tokyonight.nvim', { 'branch': 'main' }
+	use("folke/tokyonight.nvim")
 	use("mhartington/oceanic-next")
 	-- use("altercation/vim-colors-solarized")
 	use("rakr/vim-one")
-	-- use({ "sonph/onehalf", rtp = "vim" }) buggy
+	-- use({ "sonph/onehalf", rtp = "vim" }) -- buggy
+	use({ "Everblush/everblush.nvim", as = "everblush" })
+	-- use("catppuccin/nvim") -- very pretty one
+	use("tanvirtin/monokai.nvim")
+	use("xiyaowong/nvim-transparent")
+	-- new
+	use("sainnhe/edge")
+	use("tiagovla/tokyodark.nvim")
+	use("cpea2506/one_monokai.nvim")
+	use("olimorris/onedarkpro.nvim")
+	-- use("projekt0n/github-nvim-theme")
+	use("nxvu699134/vn-night.nvim")
+	use("sainnhe/sonokai")
+	use({ "nyoom-engineering/oxocarbon.nvim" })
 
 	-- Plug 'prettier/vim-prettier', {
 	-- \ 'do': 'npm install --frozen-lockfile --production',

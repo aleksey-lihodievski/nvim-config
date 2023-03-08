@@ -9,23 +9,26 @@ vim.api.nvim_command('packadd packer.nvim')
 
 local no_errors, error_msg = pcall(function()
 
-  local time
-  local profile_info
-  local should_profile = false
-  if should_profile then
-    local hrtime = vim.loop.hrtime
-    profile_info = {}
-    time = function(chunk, start)
-      if start then
-        profile_info[chunk] = hrtime()
-      else
-        profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
-      end
+_G._packer = _G._packer or {}
+_G._packer.inside_compile = true
+
+local time
+local profile_info
+local should_profile = false
+if should_profile then
+  local hrtime = vim.loop.hrtime
+  profile_info = {}
+  time = function(chunk, start)
+    if start then
+      profile_info[chunk] = hrtime()
+    else
+      profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
     end
-  else
-    time = function(chunk, start) end
   end
-  
+else
+  time = function(chunk, start) end
+end
+
 local function save_profiles(threshold)
   local sorted_times = {}
   for chunk_name, time_taken in pairs(profile_info) do
@@ -38,8 +41,10 @@ local function save_profiles(threshold)
       results[i] = elem[1] .. ' took ' .. elem[2] .. 'ms'
     end
   end
+  if threshold then
+    table.insert(results, '(Only showing plugins that took longer than ' .. threshold .. ' ms ' .. 'to load)')
+  end
 
-  _G._packer = _G._packer or {}
   _G._packer.profile_output = results
 end
 
@@ -109,6 +114,16 @@ _G.packer_plugins = {
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
   },
+  edge = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/edge",
+    url = "https://github.com/sainnhe/edge"
+  },
+  everblush = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/everblush",
+    url = "https://github.com/Everblush/everblush.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -124,10 +139,20 @@ _G.packer_plugins = {
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["monokai.nvim"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/monokai.nvim",
+    url = "https://github.com/tanvirtin/monokai.nvim"
+  },
   neogit = {
     loaded = true,
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/neogit",
     url = "https://github.com/TimUntersberger/neogit"
+  },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -149,10 +174,15 @@ _G.packer_plugins = {
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-transparent"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/nvim-transparent",
+    url = "https://github.com/xiyaowong/nvim-transparent"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/kyazdani42/nvim-tree.lua"
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -162,12 +192,27 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["oceanic-next"] = {
     loaded = true,
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/oceanic-next",
     url = "https://github.com/mhartington/oceanic-next"
+  },
+  ["one_monokai.nvim"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/one_monokai.nvim",
+    url = "https://github.com/cpea2506/one_monokai.nvim"
+  },
+  ["onedarkpro.nvim"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
+    url = "https://github.com/olimorris/onedarkpro.nvim"
+  },
+  ["oxocarbon.nvim"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/oxocarbon.nvim",
+    url = "https://github.com/nyoom-engineering/oxocarbon.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -184,6 +229,11 @@ _G.packer_plugins = {
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
   },
+  sonokai = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/sonokai",
+    url = "https://github.com/sainnhe/sonokai"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -195,6 +245,21 @@ _G.packer_plugins = {
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["tokyodark.nvim"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/tokyodark.nvim",
+    url = "https://github.com/tiagovla/tokyodark.nvim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
+  vim = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/vim",
+    url = "https://github.com/dracula/vim"
+  },
   ["vim-go"] = {
     loaded = true,
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/vim-go",
@@ -204,6 +269,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/vim-one",
     url = "https://github.com/rakr/vim-one"
+  },
+  ["vim-solidity"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/vim-solidity",
+    url = "https://github.com/tomlion/vim-solidity"
+  },
+  ["vn-night.nvim"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/vn-night.nvim",
+    url = "https://github.com/nxvu699134/vn-night.nvim"
   }
 }
 
@@ -212,6 +287,13 @@ time([[Defining packer_plugins]], false)
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
+
+_G._packer.inside_compile = false
+if _G._packer.needs_bufread == true then
+  vim.cmd("doautocmd BufRead")
+end
+_G._packer.needs_bufread = false
+
 if should_profile then save_profiles() end
 
 end)

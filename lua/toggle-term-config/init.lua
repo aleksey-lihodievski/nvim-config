@@ -6,7 +6,7 @@ require("toggleterm").setup({
 			return vim.o.columns * 0.4
 		end
 	end,
-	open_mapping = [[<c-/>]],
+	open_mapping = [[<c-j>]],
 	hide_numbers = true, -- hide the number column in toggleterm buffers
 	persist_mode = true, -- if set to true (default) the previous terminal mode will be remembered
 	direction = "horizontal", --| 'vertical' | 'tab' | 'float',

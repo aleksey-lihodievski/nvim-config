@@ -33,6 +33,8 @@ vim.cmd("colorscheme sonokai")
 -- github_dark_default is awesome (and github_dark)
 -- sonokai is super awesome
 -- one_monokai
+-- monokai_soda is also good
+-- tokyonigt-day is a good light theme
 
 -- -- Transparency is fully supported in
 -- OceanicNext

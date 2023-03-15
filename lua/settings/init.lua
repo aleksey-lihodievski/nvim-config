@@ -39,5 +39,6 @@ set.clipboard = "unnamedplus"
 
 vim.cmd(":set noswapfile")
 set.guitablabel = "%t"
+vim.cmd(":syntax sync maxlines=200")
 
 --vim.notify = require("notify")

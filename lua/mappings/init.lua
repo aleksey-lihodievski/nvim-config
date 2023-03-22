@@ -57,15 +57,6 @@ map("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", opts)
 map("n", "<leader>fb", "<Cmd>Telescope buffers<CR>", opts)
 map("n", "<leader>fh", "<Cmd>Telescope help_tags<CR>", opts)
 
--- Default for comments
--- gcc comment/uncomment current line, this does not take a count, if you want a count use the gc{count}{motion}
--- gc{motion} comment/uncomment selection defined by a motion (as lines are commented, any comment toggling actions will default to a linewise):
--- gcip comment/uncomment a paragraph
--- gc4w comment/uncomment current line
--- gc4j comment/uncomment 4 lines below the current line
--- dic delete comment block
--- gcic uncomment commented block
-
 map("n", "<leader>gg", "<Cmd>:Neogit<CR>", opts)
 map("n", "<leader>do", "<Cmd>:DiffviewOpen<CR>", opts)
 map("n", "<leader>dc", "<Cmd>:DiffviewClose<CR>", opts)

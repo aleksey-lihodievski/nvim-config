@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -164,11 +169,6 @@ _G.packer_plugins = {
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-comment"] = {
-    loaded = true,
-    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/nvim-comment",
-    url = "https://github.com/terrortylor/nvim-comment"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -188,6 +188,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/Users/aleksejlihodievskij/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
+    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
   ["nvim-web-devicons"] = {
     loaded = true,

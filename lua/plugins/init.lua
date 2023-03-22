@@ -16,7 +16,8 @@ return require("packer").startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 	use("romgrk/barbar.nvim")
 	use("jiangmiao/auto-pairs")
-	use("terrortylor/nvim-comment")
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use("numToStr/Comment.nvim")
 
 	-- use("williamboman/nvim-lsp-installer")
 	-- use({ "williamboman/mason.nvim" })
@@ -35,10 +36,7 @@ return require("packer").startup(function(use)
 
 	use("TimUntersberger/neogit")
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
-	use({
-		"lewis6991/gitsigns.nvim",
-		tag = "release", -- To use the latest release
-	})
+	use("lewis6991/gitsigns.nvim")
 
 	use({ "neoclide/coc.nvim", branch = "release" })
 	use("fatih/vim-go")

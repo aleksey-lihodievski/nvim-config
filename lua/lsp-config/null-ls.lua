@@ -19,6 +19,7 @@ local sources = {
 	-- diagnostics.eslint,
 	-- diagnostics.stylelint_lsp,
 	-- formatting.tsserver,
+	null_ls.builtins.code_actions.gitsigns,
 }
 
 null_ls.setup({

@@ -13,13 +13,20 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local sources = {
 	formatting.prettier,
 	formatting.stylua,
-	-- formatting.pylint,
+	formatting.rustfmt, -- new rust
+	formatting.black,
 	-- formatting.solhint,
 	-- formatting.eslint, starts working after first fail
 	-- diagnostics.eslint,
 	-- diagnostics.stylelint_lsp,
 	-- formatting.tsserver,
 	null_ls.builtins.code_actions.gitsigns,
+
+	-- diagnostics.pylint.with({
+	-- 	diagnostics_postprocess = function(diagnostic)
+	-- 		diagnostic.code = diagnostic.message_id
+	-- 	end,
+	-- }),
 }
 
 null_ls.setup({

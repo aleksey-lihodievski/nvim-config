@@ -1,3 +1,5 @@
+local actions = require("diffview.actions")
+
 require("diffview").setup({
 	diffopt = "horizontal",
 	-- diff_binaries = false, -- Show diffs for binaries
@@ -17,15 +19,14 @@ require("diffview").setup({
 	},
 	file_history_panel = {
 		log_options = { -- See ':h diffview-config-log_options'
-    git = {
-      			single_file = {
-				diff_merges = "combined",
+			git = {
+				single_file = {
+					diff_merges = "combined",
+				},
+				multi_file = {
+					diff_merges = "first-parent",
+				},
 			},
-			multi_file = {
-				diff_merges = "first-parent",
-			},
-
-    }
 		},
 		win_config = { -- See ':h diffview-config-win_config'
 			position = "bottom",
@@ -33,3 +34,9 @@ require("diffview").setup({
 		},
 	},
 })
+
+-- if HAS_NVIM_0_9 then
+-- 	hl = api.nvim_get_hl(0, { name = name, link = true })
+-- else
+-- 	hl = api.nvim__get_hl_defs(0)[name]
+-- end

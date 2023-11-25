@@ -4,6 +4,7 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " " -- leader key
 
 --> nvim-tree mappings <--
+-- map("n", "<C-o>", ":lua require'nvim-tree-config'.toggle_tree()<CR>", opts)
 map("n", "<C-o>", ":NvimTreeToggle<CR>", opts)
 map("n", "<leader>tt", ":TransparentToggle<CR>", opts)
 --> telescope mappings <--
@@ -50,6 +51,7 @@ map("n", "<leader>9", "<Cmd>BufferGoto 9<CR>", opts)
 map("n", "<leader>0", "<Cmd>BufferLast<CR>", opts)
 -- Close buffer
 map("n", "gw", "<Cmd>BufferClose<CR>", opts)
+map("n", "<leader>w", "<Cmd>BufferCloseAllButVisible<CR>", opts)
 
 --Telescope
 map("n", "<leader>ff", "<Cmd>Telescope find_files<CR>", opts)

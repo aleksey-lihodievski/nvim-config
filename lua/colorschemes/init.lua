@@ -4,7 +4,16 @@
 -- vim.cmd("colorscheme kanagawa")
 -- vim.cmd("colorscheme molokai")
 -- vim.cmd("colorscheme tokyonight-night")
-vim.cmd("colorscheme sonokai")
+
+-- vim.cmd("colorscheme sonokai")
+-- vim.cmd("colorscheme dusklight")
+-- vim.cmd("colorscheme carbonfox")
+-- vim.cmd("colorscheme vn-night")
+-- vim.cmd("colorscheme toast")
+
+-- vim.cmd("colorscheme sunbather")
+vim.cmd("colorscheme oxocarbon")
+-- vim.cmd([[hi NvimTreeNormal guibg=NONE ctermbg=NONE]])
 
 -- require("monokai").setup({})
 -- require("monokai").setup({ palette = require("monokai").pro })
@@ -42,3 +51,4 @@ vim.cmd("colorscheme sonokai")
 -- dracula
 -- gruvebox
 -- tokyodark is nice without transparency
+ 

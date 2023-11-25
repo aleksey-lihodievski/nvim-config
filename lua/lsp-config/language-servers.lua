@@ -105,49 +105,27 @@ require("lspconfig").eslint.setup({
 	end,
 })
 
-require("lspconfig").gopls.setup({})
+require("lspconfig").gopls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
 
--- require("lspconfig").solc.setup({})
--- require("lspconfig").solang.setup({})
--- require("lspconfig").solidity_ls.setup({})
+require("lspconfig").pyright.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	flags = lsp_flags,
+})
 
-require("lspconfig").pyright.setup({})
+require("lspconfig").rust_analyzer.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+	cmd = {
+		"rustup",
+		"run",
+		"stable",
+		"rust-analyzer",
+	},
+})
 
--- require("lspconfig")["stylelint_lsp"].setup({
--- 	on_attach = function(client, bufnr)
--- 		on_attach(client, bufnr)
--- 		disableFormatting(client, bufnr)
--- 	end,
---
--- 	settings = {
--- 		stylelintplus = {
--- 			-- see available options in stylelint-lsp documentation
--- 		},
--- 	},
--- })
-
--- require'lspconfig'.cssls.setup{
---   on_attach = function(client, bufnr)
---     on_attach(client, bufnr)
---     disableFormatting(client, bufnr)
---   end,
--- }
-
--- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
--- or
--- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
-
---require('lspconfig')['pyright'].setup{
---    on_attach = on_attach,
---    capabilities = capabilities,
---    flags = lsp_flags,
---}
---require('lspconfig')['rust_analyzer'].setup{
---    on_attach = on_attach,
---    capabilities = capabilities,
---    flags = lsp_flags,
---    -- Server-specific settings...
---    settings = {
---      ["rust-analyzer"] = {}
---    }
---}
+require("lspconfig").astro.setup({})

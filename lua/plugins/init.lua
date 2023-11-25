@@ -18,12 +18,18 @@ return require("packer").startup(function(use)
 	use("jiangmiao/auto-pairs")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("numToStr/Comment.nvim")
+	use("norcalli/nvim-colorizer.lua")
+	use("windwp/nvim-ts-autotag")
+	use("github/copilot.vim")
 
 	-- use("williamboman/nvim-lsp-installer")
 	-- use({ "williamboman/mason.nvim" })
+
 	use("neovim/nvim-lspconfig")
+
 	-- use("williamboman/mason-lspconfig.nvim")
 	-- use("kabouzeid/nvim-lspinstall")
+
 	use("hrsh7th/nvim-cmp") -- Autocompletion plugin
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
@@ -37,10 +43,14 @@ return require("packer").startup(function(use)
 	use("TimUntersberger/neogit")
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 	use("lewis6991/gitsigns.nvim")
+	use("rcarriga/nvim-notify")
 
 	use({ "neoclide/coc.nvim", branch = "release" })
 	use("fatih/vim-go")
 	use("tomlion/vim-solidity")
+	use("tpope/vim-dadbod")
+	use("kristijanhusak/vim-dadbod-ui")
+	-- use("kristijanhusak/vim-dadbod-completion")
 
 	-- use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
@@ -58,7 +68,7 @@ return require("packer").startup(function(use)
 	use({ "Everblush/everblush.nvim", as = "everblush" })
 	-- use("catppuccin/nvim") -- very pretty one
 	use("tanvirtin/monokai.nvim")
-	use("xiyaowong/nvim-transparent")
+	use("xiyaowong/transparent.nvim")
 	-- new
 	use("sainnhe/edge")
 	use("tiagovla/tokyodark.nvim")
@@ -68,6 +78,11 @@ return require("packer").startup(function(use)
 	use("nxvu699134/vn-night.nvim")
 	use("sainnhe/sonokai")
 	use({ "nyoom-engineering/oxocarbon.nvim" })
+	-- colorful
+	use("jsit/toast.vim") -- nice but props not so readable
+	use("maximumtiu/true.vim") -- nice but props not so readable
+	use("drazil100/dusklight.vim") -- nice
+	use("nikolvs/vim-sunbather") -- impressive!
 
 	-- Plug 'prettier/vim-prettier', {
 	-- \ 'do': 'npm install --frozen-lockfile --production',

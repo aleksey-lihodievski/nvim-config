@@ -30,11 +30,44 @@ return require("packer").startup(function(use)
 	-- use("williamboman/mason-lspconfig.nvim")
 	-- use("kabouzeid/nvim-lspinstall")
 
-	use("hrsh7th/nvim-cmp") -- Autocompletion plugin
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
-	use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
-	use("L3MON4D3/LuaSnip") -- Snippets plugin
+	use({
+		"hrsh7th/nvim-cmp",
+		requires = {
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-nvim-lsp",
+			"quangnguyen30192/cmp-nvim-ultisnips",
+			"hrsh7th/cmp-nvim-lua",
+			"octaltree/cmp-look",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-calc",
+			"f3fora/cmp-spell",
+			"hrsh7th/cmp-emoji",
+			"saadparwaiz1/cmp_luasnip",
+		},
+	})
+	-- use("hrsh7th/nvim-cmp", {
+	-- 	requires = {
+	-- 		{ "hrsh7th/cmp-buffer" },
+	-- 		{ "hrsh7th/cmp-path" },
+	-- 		{ "hrsh7th/cmp-nvim-lsp" },
+	-- 		{ "saadparwaiz1/cmp_luasnip" },
+	-- 	},
+	-- }) -- Autocompletion plugin
+	-- -- requires = { { "cmps" } },
+	-- -- requires = {{"nvim-lua/popup.nvim", opt = true}, {"nvim-lua/plenary.nvim", opt = true}},
+	-- use("hrsh7th/cmp-buffer")
+	-- use("hrsh7th/cmp-path")
+	-- use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
+	-- use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
+	use({
+		"L3MON4D3/LuaSnip",
+		-- follow latest release.
+		-- tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		-- install jsregexp (optional!:).
+		-- run = "make install_jsregexp",
+	})
+	-- use("L3MON4D3/LuaSnip") -- Snippets plugin
+	use("rafamadriz/friendly-snippets")
 
 	use("nvim-lua/plenary.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
@@ -94,7 +127,7 @@ return require("packer").startup(function(use)
 	-- use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.0",
+		branch = "0.1.x",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	--use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }

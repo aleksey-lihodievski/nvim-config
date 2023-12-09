@@ -5,8 +5,9 @@ local callback = function()
 end
 
 local formatting = null_ls.builtins.formatting
-
 local diagnostics = null_ls.builtins.diagnostics
+local completion = null_ls.builtins.completion
+local code_actions = null_ls.builtins.code_actions
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
@@ -20,7 +21,12 @@ local sources = {
 	-- diagnostics.eslint,
 	-- diagnostics.stylelint_lsp,
 	-- formatting.tsserver,
-	null_ls.builtins.code_actions.gitsigns,
+	code_actions.gitsigns,
+
+	completion.luasnip,
+
+	diagnostics.luacheck,
+	null_ls.builtins.code_actions.eslint,
 
 	-- diagnostics.pylint.with({
 	-- 	diagnostics_postprocess = function(diagnostic)

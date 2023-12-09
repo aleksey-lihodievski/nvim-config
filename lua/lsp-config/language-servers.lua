@@ -17,7 +17,10 @@ end
 local on_attach = function(client, bufnr)
 	-- disableFormatting(client, bufnr)
 	-- Enable completion triggered by <c-x><c-o>
+
+	----------------------------------------------
 	-- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+	----------------------------------------------
 
 	if client.server_capabilities.documentFormattingProvider then
 		vim.cmd("nnoremap <silent><buffer> <Leader>fd :lua vim.lsp.buf.format()<CR>")
@@ -50,8 +53,8 @@ local on_attach = function(client, bufnr)
 end
 
 --Add additional capabilities supported by nvim-cmp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local util = require("vim.lsp.util")
 
@@ -59,6 +62,7 @@ local lsp_flags = {
 	-- This is the default in Nvim 0.7+
 	debounce_text_changes = 150,
 }
+
 require("lspconfig")["tsserver"].setup({
 	-- on_attach = on_attach,
 	on_attach = function(client, bufnr)
@@ -69,9 +73,9 @@ require("lspconfig")["tsserver"].setup({
 	flags = lsp_flags,
 })
 
-require("lspconfig").angularls.setup({})
+-- require("lspconfig").angularls.setup({})
 
-require("lspconfig").graphql.setup({})
+-- require("lspconfig").graphql.setup({})
 
 require("lspconfig").prismals.setup({})
 
@@ -83,6 +87,7 @@ require("lspconfig").prismals.setup({})
 --     capabilities = capabilities,
 --     flags = lsp_flags,
 -- }
+
 require("lspconfig")["emmet_ls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -116,16 +121,16 @@ require("lspconfig").pyright.setup({
 	flags = lsp_flags,
 })
 
-require("lspconfig").rust_analyzer.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	flags = lsp_flags,
-	cmd = {
-		"rustup",
-		"run",
-		"stable",
-		"rust-analyzer",
-	},
-})
+-- require("lspconfig").rust_analyzer.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- 	flags = lsp_flags,
+-- 	cmd = {
+-- 		"rustup",
+-- 		"run",
+-- 		"stable",
+-- 		"rust-analyzer",
+-- 	},
+-- })
 
 require("lspconfig").astro.setup({})

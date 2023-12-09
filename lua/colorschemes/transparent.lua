@@ -28,18 +28,18 @@ require("transparent").setup({
 		-- In particular, when you set it to 'all', that means all available groups
 
 		-- example of akinsho/nvim-bufferline.lua
-		"BufferLineTabClose",
-		"BufferlineBufferSelected",
-		"BufferLineFill",
-		"BufferLineBackground",
-		"BufferLineSeparator",
-		"BufferLineIndicatorSelected",
+		-- "BufferLineTabClose",
+		-- "BufferlineBufferSelected",
+		-- "BufferLineFill",
+		-- "BufferLineBackground",
+		-- "BufferLineSeparator",
+		-- "BufferLineIndicatorSelected",
 
-		"NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
+		-- "NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
 		"NvimTreeNormal", -- NvimTree
 	},
 	exclude_groups = {}, -- table: groups you don't want to clear
 })
 
 require("transparent").clear_prefix("BufferLine")
-require("transparent").clear_prefix("lualine")
+-- require("transparent").clear_prefix("lualine")

@@ -27,7 +27,10 @@ set.relativenumber = true
 set.number = true
 set.cursorline = true
 set.wildmenu = true
-set.completeopt = "menuone,noselect"
+-- set.completeopt = "menu,menuone,noselect"
+-- set.completeopt = "menuone,noselect,noinsert"
+-- set.completeopt = "preview"
+-- set.complete = ""
 set.cc = "80" --set an 80 column border for good coding style
 
 set.hidden = true

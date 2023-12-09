@@ -9,6 +9,13 @@ require("barbar").setup({
 				left = "",
 			},
 		},
+
+		diagnostics = {
+			[vim.diagnostic.severity.ERROR] = { enabled = true },
+			[vim.diagnostic.severity.WARN] = { enabled = true },
+			[vim.diagnostic.severity.INFO] = { enabled = false },
+			[vim.diagnostic.severity.HINT] = { enabled = false },
+		},
 	},
 
 	-- Set the filetypes which barbar will offset itself for

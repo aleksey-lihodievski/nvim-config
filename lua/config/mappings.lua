@@ -67,3 +67,5 @@ map("n", "<leader>gl", "<Cmd>:Neogit log<CR>", opts)
 map("n", "<leader>gp", "<Cmd>:Neogit push<CR>", opts)
 
 map("n", "<leader><leader>", "<Cmd>:update<CR>", opts)
+
+map("n", "<CR>", "za", opts)

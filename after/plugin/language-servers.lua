@@ -1,6 +1,9 @@
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions local opts = { noremap = true, silent = true }
 
+-- local navic = require("nvim-navic")
+-- vim.b.navic_lazy_update_context = true
+
 local diagnostic_goto = function(next, severity)
 	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
 	severity = severity and vim.diagnostic.severity[severity] or nil
@@ -57,6 +60,10 @@ local on_attach = function(client, bufnr)
 	-- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 	----------------------------------------------
 
+	-- if client.server_capabilities.documentSymbolProvider then
+	-- 	navic.attach(client, bufnr)
+	-- end
+
 	if client.server_capabilities.documentFormattingProvider then
 		vim.cmd("nnoremap <silent><buffer> <Leader>fd :lua vim.lsp.buf.format()<CR>")
 		-- format on save
@@ -70,10 +77,10 @@ local on_attach = function(client, bufnr)
 	-- Mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
-	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
-	vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+	-- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
+	-- vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
-	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+	-- vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
 	vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
 	--vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
 	--vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
@@ -83,7 +90,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
 	vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
 	vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
-	vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+	-- vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
 	-- vim.keymap.set("n", "<space>df", vim.lsp.buf.formatting, bufopts)
 end
 
@@ -123,20 +130,20 @@ require("lspconfig").prismals.setup({})
 --     flags = lsp_flags,
 -- }
 
--- require("lspconfig")["emmet_ls"].setup({
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
--- 	init_options = {
--- 		html = {
--- 			options = {
--- 				-- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
--- 				["bem.enabled"] = true,
--- 			},
--- 		},
--- 	},
--- 	flags = lsp_flags,
--- })
+require("lspconfig")["emmet_ls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
+	init_options = {
+		html = {
+			options = {
+				-- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+				["bem.enabled"] = true,
+			},
+		},
+	},
+	flags = lsp_flags,
+})
 
 require("lspconfig").eslint.setup({
 	on_attach = function(client, bufnr)

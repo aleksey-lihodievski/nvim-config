@@ -26,4 +26,4 @@ require("barbar").setup({
 	},
 })
 
-vim.cmd("hi BufferTabpageFill ctermbg=black")
+-- vim.cmd("hi BufferTabpageFill ctermbg=black")

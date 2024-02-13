@@ -1,0 +1,5 @@
+-- require("notify").setup({
+-- 	-- top_down = false,
+-- 	--
+-- 	-- level = 3,
+-- })
